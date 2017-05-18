@@ -197,7 +197,7 @@ controller.hears(['add (.*)'],'direct_mention,direct_message',function(bot,messa
 });
 
 
-controller.hears(['list','tasks'],'direct_mention,direct_message',function(bot,message) {
+controller.hears(['rubberducky'],'direct_mention,direct_message',function(bot,message) {
 
     controller.storage.users.get(message.user, function(err, user) {
 
@@ -212,21 +212,21 @@ controller.hears(['list','tasks'],'direct_mention,direct_message',function(bot,m
             user.list = [
                 {
                     'id': 1,
-                    'text': 'Test Item 1'
+                    'text': 'Mallory H.'
                 },
                 {
                     'id': 2,
-                    'text': 'Test Item 2'
+                    'text': 'Dean Larbi'
                 },
                 {
                     'id': 3,
-                    'text': 'Test Item 3'
+                    'text': 'Ben Madore'
                 }
             ]
         }
 
         var reply = {
-            text: 'Here is your list. Say `add <item>` to add items.',
+            text: 'Here are some people in your organization that could help you with that skill.',
             attachments: [],
         }
 
@@ -307,7 +307,7 @@ controller.on(['direct_message','mention','direct_mention'],function(bot,message
     name: 'robot_face',
   },function(err) {
     if (err) { console.log(err) }
-    bot.reply(message,'I heard you loud and clear boss.');
+    bot.reply(message,'Quack quack!  Type ```/rubberducky <skill>``` to find someone in your organization to collaborate with!');
   });
 });
 
