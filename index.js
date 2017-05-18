@@ -173,28 +173,28 @@ controller.on('rtm_close',function(bot) {
 });
 
 
-controller.hears(['add (.*)'],'direct_mention,direct_message',function(bot,message) {
-
-    controller.storage.users.get(message.user, function(err, user) {
-
-        if (!user) {
-            user = {
-                id: message.user,
-                list: []
-            }
-        }
-
-        user.list.push({
-            id: message.ts,
-            text: message.match[1],
-        });
-
-        bot.reply(message,'Added to list. Say `list` to view or manage list.');
-
-        controller.storage.users.save(user);
-
-    });
-});
+// controller.hears(['add (.*)'],'direct_mention,direct_message',function(bot,message) {
+//
+//     controller.storage.users.get(message.user, function(err, user) {
+//
+//         if (!user) {
+//             user = {
+//                 id: message.user,
+//                 list: []
+//             }
+//         }
+//
+//         user.list.push({
+//             id: message.ts,
+//             text: message.match[1],
+//         });
+//
+//         bot.reply(message,'Added to list. Say `list` to view or manage list.');
+//
+//         controller.storage.users.save(user);
+//
+//     });
+// });
 
 
 controller.hears(['quack about|Quack about'],'direct_mention,direct_message',function(bot,message) {
@@ -267,6 +267,36 @@ controller.hears(['quack about|Quack about'],'direct_mention,direct_message',fun
 
 });
 
+controller.hears(['Add a skill|add a skill'],'direct_mention,direct_message',function(bot,message) {
+
+  bot.startConversation(message, function(err, convo) {
+    convo.ask({
+      text: 'Whats a skill or interest you\'d like to share?  Don\'t worry about being an expert, we\'ll ask more to find out your level!',
+    },[
+        {
+          pattern: '(.*)',
+          callback: function(reply, convo) {
+            convo.say('Thats a great skill!');
+            convo.next();
+          }
+        },
+        {
+          default: true,
+          callback: function(reply, convo) {
+              // do nothing
+          }
+        }
+    ]);
+  });
+  });
+  // var reply = {
+  //   text: 'Whats a skill or interest you\'d like to share?  Don\'t worry about being an expert, we\'ll ask more to find out your level!',
+  // }
+  //
+  // bot.reply(message, reply);
+
+});
+
 controller.hears('interactive', 'direct_message', function(bot, message) {
 
     bot.reply(message, {
@@ -308,6 +338,8 @@ controller.on(['direct_message','mention','direct_mention'],function(bot,message
   },function(err) {
     if (err) { console.log(err) }
     bot.reply(message,'Quack quack!  Type ```Quack about <skill>``` to find someone in your organization to collaborate with!');
+    bot.reply(message,'Or,  Type ```Add a skill <skill>``` to start adding skills other people can Quack at you about!');
+
   });
 });
 
