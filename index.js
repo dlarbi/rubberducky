@@ -197,7 +197,7 @@ controller.hears(['add (.*)'],'direct_mention,direct_message',function(bot,messa
 });
 
 
-controller.hears(['rubberducky'],'direct_mention,direct_message',function(bot,message) {
+controller.hears(['quack about|Quack about'],'direct_mention,direct_message',function(bot,message) {
 
     controller.storage.users.get(message.user, function(err, user) {
 
@@ -237,16 +237,16 @@ controller.hears(['rubberducky'],'direct_mention,direct_message',function(bot,me
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"flag",
-                        "text": ":waving_black_flag: Flag",
+                        "name":"seeSkills",
+                        "text": "See their skills. 🏆",
                         "value": "flag",
                         "type": "button",
                     },
                     {
-                       "text": "Delete",
-                        "name": "delete",
-                        "value": "delete",
-                        "style": "danger",
+                       "text": "Quack at em'",
+                        "name": "message",
+                        "value": "message",
+                        "style": "success",
                         "type": "button",
                         "confirm": {
                           "title": "Are you sure?",
