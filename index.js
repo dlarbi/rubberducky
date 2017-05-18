@@ -288,7 +288,7 @@ controller.hears(['Add a skill|add a skill'],'direct_mention,direct_message',fun
         }
     ]);
   });
-  });
+
   // var reply = {
   //   text: 'Whats a skill or interest you\'d like to share?  Don\'t worry about being an expert, we\'ll ask more to find out your level!',
   // }
