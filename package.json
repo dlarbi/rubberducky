@@ -1,0 +1,29 @@
+{
+  "name": "rubberducky",
+  "version": "1.0.0",
+  "description": "Find teammates to talk with",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlarbi/rubberducky.git"
+  },
+  "keywords": [
+    "Team",
+    "building",
+    "team",
+    "work",
+    "friends",
+    "organization",
+    "programming",
+    "design"
+  ],
+  "author": "Dean Larbi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dlarbi/rubberducky/issues"
+  },
+  "homepage": "https://github.com/dlarbi/rubberducky#readme"
+}
