@@ -246,7 +246,7 @@ controller.hears(['quack about|Quack about'],'direct_mention,direct_message',fun
                        "text": "Quack at em'",
                         "name": "message",
                         "value": "message",
-                        "style": "good",
+                        "style": "primary",
                         "type": "button",
                         "confirm": {
                           "title": "Are you sure?",
