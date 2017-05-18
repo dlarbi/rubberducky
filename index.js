@@ -246,7 +246,7 @@ controller.hears(['quack about|Quack about'],'direct_mention,direct_message',fun
                        "text": "Quack at em'",
                         "name": "message",
                         "value": "message",
-                        "style": "success",
+                        "style": "good",
                         "type": "button",
                         "confirm": {
                           "title": "Are you sure?",
@@ -307,7 +307,7 @@ controller.on(['direct_message','mention','direct_mention'],function(bot,message
     name: 'robot_face',
   },function(err) {
     if (err) { console.log(err) }
-    bot.reply(message,'Quack quack!  Type ```/rubberducky <skill>``` to find someone in your organization to collaborate with!');
+    bot.reply(message,'Quack quack!  Type ```Quack about <skill>``` to find someone in your organization to collaborate with!');
   });
 });
 
