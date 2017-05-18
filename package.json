@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/dlarbi/rubberducky/issues"
   },
-  "homepage": "https://github.com/dlarbi/rubberducky#readme"
+  "homepage": "https://github.com/dlarbi/rubberducky#readme",
+  "dependencies": {
+    "botkit": "^0.5.4"
+  }
 }
