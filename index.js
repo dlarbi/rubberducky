@@ -276,7 +276,7 @@ controller.hears(['Add a skill|add a skill'],'direct_mention,direct_message',fun
         {
           pattern: '(.*)',
           callback: function(reply, convo) {
-            convo.say('Thats a great skill!');
+            convo.say(`Thats a great skill! I\'ll add you to the system so other people can Quack at you!  How long have you been doing ${reply.text}?`);
             convo.next();
           }
         },
@@ -338,7 +338,7 @@ controller.on(['direct_message','mention','direct_mention'],function(bot,message
   },function(err) {
     if (err) { console.log(err) }
     bot.reply(message,'Quack quack!  Type ```Quack about <skill>``` to find someone in your organization to collaborate with!');
-    bot.reply(message,'Or,  Type ```Add a skill <skill>``` to start adding skills other people can Quack at you about!');
+    bot.reply(message,'Or,  Type ```Add a skill``` to start adding skills other people can Quack at you about!');
 
   });
 });
